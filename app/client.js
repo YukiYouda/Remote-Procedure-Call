@@ -10,7 +10,7 @@ const client = net.createConnection(socketPath, () => {
         method: 'validAnagram',
         params: ['test','sett'],
         param_types: ['string', 'string'],
-        id: 2
+        id: 2,
     };
 
     client.write(JSON.stringify(message));

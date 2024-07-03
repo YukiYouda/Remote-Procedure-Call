@@ -60,16 +60,12 @@ while True:
                 params = data_json['params']
                 param_types = data_json['param_types']
                 id = data_json['id']
-                resonse['result_type'] = param_types[0]
-                resonse['id'] = id
 
-                if method == 'sort':
-                    resonse['results'] = functions[method](params) 
-                elif len(params) == 2:
-                    resonse['results'] = functions[method](params[0], params[1]) 
-                elif len(params) == 1:
-                    resonse['results'] = functions[method](params[0]) 
-                resonse =  json.dumps(resonse).encode('utf-8')
+                resonse['id'] = id
+                resonse['results'] = functions[method](*params)
+                resonse['result_type'] = type(resonse['results']).__name__
+
+                resonse = json.dumps(resonse).encode('utf-8')
                 connection.sendall(resonse)
             else:
                 print('no data from', cilent_address)
