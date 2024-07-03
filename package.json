@@ -1,0 +1,8 @@
+{
+    "name": "your-node-app",
+    "version": "1.0.0",
+    "description": "Node.js and Python in Docker",
+    "dependencies": {
+      "express": "^4.17.1"
+    }
+  }
