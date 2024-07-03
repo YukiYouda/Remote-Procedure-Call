@@ -19,23 +19,10 @@ def sort(strArr):
     return sorted(strArr)
 
 def validAnagram(str1, str2):
-    countMap1 = {}
-    countMap2 = {}
-
-    for char in str1:
-        if char not in countMap1:
-            countMap1[char] = 0
-        countMap1[char] += 1
-
-    for char in str2:
-        if char not in countMap2:
-            countMap2[char] = 0
-        countMap2[char] += 1
-    
-    return countMap1 == countMap2
+    return sorted(str1) == sorted(str2)
 
 functions = {
-    'subtract' : subtract, 
+    'subtract' : subtract,
     'floor' : floor,
     'nroot' : nroot,
     'reverse' : reverse,
